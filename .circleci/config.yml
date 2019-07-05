@@ -1,0 +1,13 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: perl:5.28.1
+    steps:
+      - checkout
+      - run:
+          name: "Run Test Suite"
+          command: |
+            prove -j 4 -lr t
+
